@@ -1,0 +1,1971 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ain Zahirah | Secure Programming e-Portfolio</title>
+
+
+    <!-- GOOGLE FONT -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <style>
+
+        /* =====================================================
+           SOFT PINK COLOUR PALETTE
+        ===================================================== */
+
+        :root {
+
+            --pink-lightest: #fff8fa;
+
+            --pink-light: #fff0f4;
+
+            --pink-soft: #ffe2eb;
+
+            --pink-medium: #f7bfd0;
+
+            --pink-main: #e99ab3;
+
+            --pink-dark: #c96f8e;
+
+            --rose: #a95772;
+
+            --text-dark: #51434a;
+
+            --text-light: #786b71;
+
+            --white: #ffffff;
+
+            --border-pink: #f3d5df;
+
+            --shadow-soft: rgba(201, 111, 142, 0.12);
+
+            --shadow-medium: rgba(201, 111, 142, 0.20);
+
+        }
+
+
+        /* =====================================================
+           GENERAL RESET
+        ===================================================== */
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+        }
+
+
+        html {
+
+            scroll-behavior: smooth;
+
+            scroll-padding-top: 90px;
+
+        }
+
+
+        body {
+
+            font-family: 'Poppins', sans-serif;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    var(--pink-lightest) 0%,
+                    #ffffff 45%,
+                    var(--pink-lightest) 100%
+                );
+
+            color: var(--text-dark);
+
+            line-height: 1.8;
+
+        }
+
+
+        /* =====================================================
+           NAVIGATION
+        ===================================================== */
+
+        nav {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            background: rgba(255, 255, 255, 0.95);
+
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid var(--border-pink);
+
+            box-shadow:
+                0 4px 20px rgba(201, 111, 142, 0.10);
+
+        }
+
+
+        nav ul {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            list-style: none;
+
+            gap: 35px;
+
+            padding: 17px 20px;
+
+            flex-wrap: wrap;
+
+        }
+
+
+        nav a {
+
+            position: relative;
+
+            text-decoration: none;
+
+            color: var(--rose);
+
+            font-size: 0.95rem;
+
+            font-weight: 600;
+
+            transition: 0.3s ease;
+
+        }
+
+
+        nav a::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 50%;
+
+            bottom: -7px;
+
+            width: 0;
+
+            height: 2px;
+
+            background: var(--pink-main);
+
+            transform: translateX(-50%);
+
+            transition: 0.3s ease;
+
+        }
+
+
+        nav a:hover {
+
+            color: var(--pink-dark);
+
+        }
+
+
+        nav a:hover::after {
+
+            width: 70%;
+
+        }
+
+
+        /* =====================================================
+           HERO SECTION
+        ===================================================== */
+
+        .hero {
+
+            min-height: 88vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 70px 20px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            background:
+
+                radial-gradient(
+                    circle at 10% 15%,
+                    rgba(247, 191, 208, 0.55),
+                    transparent 32%
+                ),
+
+                radial-gradient(
+                    circle at 90% 80%,
+                    rgba(255, 226, 235, 0.8),
+                    transparent 35%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #fff8fa,
+                    #fff0f4
+                );
+
+        }
+
+
+        .hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+
+            height: 300px;
+
+            border-radius: 50%;
+
+            background: rgba(255, 255, 255, 0.5);
+
+            top: -120px;
+
+            right: -80px;
+
+        }
+
+
+        .hero::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 220px;
+
+            height: 220px;
+
+            border-radius: 50%;
+
+            background: rgba(247, 191, 208, 0.20);
+
+            bottom: -90px;
+
+            left: -70px;
+
+        }
+
+
+        .hero-content {
+
+            max-width: 850px;
+
+            position: relative;
+
+            z-index: 2;
+
+        }
+
+
+        /* =====================================================
+           MAIN AIN ZAHIRAH PROFILE PHOTO
+        ===================================================== */
+
+        .avatar {
+
+            width: 175px;
+
+            height: 175px;
+
+            margin: 0 auto 28px;
+
+            border-radius: 50%;
+
+            overflow: hidden;
+
+            background: var(--pink-soft);
+
+            border: 7px solid rgba(255, 255, 255, 0.90);
+
+            box-shadow:
+                0 15px 35px rgba(201, 111, 142, 0.22);
+
+        }
+
+
+        .avatar img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+        }
+
+
+        /* =====================================================
+           HERO TEXT
+        ===================================================== */
+
+        .hero h1 {
+
+            color: var(--rose);
+
+            font-size: 3rem;
+
+            font-weight: 700;
+
+            line-height: 1.3;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .hero p {
+
+            color: var(--text-light);
+
+            font-size: 1.05rem;
+
+            line-height: 2;
+
+        }
+
+
+        /* =====================================================
+           CONTAINER
+        ===================================================== */
+
+        .container {
+
+            width: 90%;
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            padding: 75px 0;
+
+        }
+
+
+        /* =====================================================
+           SECTION TITLE
+        ===================================================== */
+
+        .section-title {
+
+            text-align: center;
+
+            color: var(--rose);
+
+            font-size: 2rem;
+
+            font-weight: 700;
+
+            margin-bottom: 45px;
+
+        }
+
+
+        .section-title::after {
+
+            content: "";
+
+            display: block;
+
+            width: 75px;
+
+            height: 4px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--pink-medium),
+                    var(--pink-main)
+                );
+
+            margin: 12px auto 0;
+
+            border-radius: 50px;
+
+        }
+
+
+        /* =====================================================
+           GENERAL CARDS
+        ===================================================== */
+
+        .card,
+        .group-card,
+        .project-card {
+
+            background: rgba(255, 255, 255, 0.96);
+
+            border: 1px solid #f6dce4;
+
+            border-radius: 22px;
+
+            box-shadow:
+                0 10px 30px var(--shadow-soft);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+
+        }
+
+
+        .card:hover,
+        .group-card:hover,
+        .project-card:hover {
+
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 16px 35px var(--shadow-medium);
+
+        }
+
+
+        .card {
+
+            padding: 28px;
+
+        }
+
+
+        .group-card {
+
+            padding: 35px;
+
+        }
+
+
+        .project-card {
+
+            padding: 35px;
+
+        }
+
+
+        /* =====================================================
+           HEADINGS
+        ===================================================== */
+
+        h3 {
+
+            color: var(--rose);
+
+            font-size: 1.25rem;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        p {
+
+            color: var(--text-light);
+
+        }
+
+
+        strong {
+
+            color: var(--text-dark);
+
+        }
+
+
+        /* =====================================================
+           GROUP MEMBER GRID
+        ===================================================== */
+
+        .member-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 22px;
+
+            margin-top: 25px;
+
+        }
+
+
+        /* =====================================================
+           MEMBER CARD
+        ===================================================== */
+
+        .member-card {
+
+            background: #ffffff;
+
+            border: 1px solid #f5d8e1;
+
+            border-radius: 22px;
+
+            overflow: hidden;
+
+            text-align: center;
+
+            box-shadow:
+                0 8px 25px rgba(201, 111, 142, 0.10);
+
+            transition:
+                transform 0.35s ease,
+                box-shadow 0.35s ease;
+
+        }
+
+
+        .member-card:hover {
+
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 15px 32px rgba(201, 111, 142, 0.20);
+
+        }
+
+
+        /* =====================================================
+           MEMBER PHOTO
+        ===================================================== */
+
+        .member-image {
+
+            width: 100%;
+
+            height: 250px;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--pink-light),
+                    var(--pink-soft)
+                );
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+        }
+
+
+        .member-image img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition: transform 0.4s ease;
+
+        }
+
+
+        .member-card:hover .member-image img {
+
+            transform: scale(1.05);
+
+        }
+
+
+        /* =====================================================
+           MEMBER INFORMATION
+        ===================================================== */
+
+        .member-info {
+
+            padding: 20px 15px 23px;
+
+        }
+
+
+        .member-info h3 {
+
+            color: var(--rose);
+
+            font-size: 1.05rem;
+
+            line-height: 1.5;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .member-role {
+
+            display: inline-block;
+
+            padding: 6px 15px;
+
+            border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--pink-light),
+                    var(--pink-soft)
+                );
+
+            border: 1px solid #f2d1dc;
+
+            color: var(--rose);
+
+            font-size: 0.82rem;
+
+            font-weight: 600;
+
+            margin-top: 5px;
+
+        }
+
+
+        /* =====================================================
+           PROJECT SCENARIO
+        ===================================================== */
+
+        .scenario-box {
+
+            margin-top: 30px;
+
+            padding: 22px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--pink-light),
+                    #ffffff
+                );
+
+            border-left: 4px solid var(--pink-main);
+
+            border-radius: 12px;
+
+        }
+
+
+        .scenario-box h3 {
+
+            margin-bottom: 8px;
+
+        }
+
+
+        /* =====================================================
+           VULNERABILITY GRID
+        ===================================================== */
+
+        .grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(320px, 1fr));
+
+            gap: 25px;
+
+        }
+
+
+        /* =====================================================
+           CASE NUMBER
+        ===================================================== */
+
+        .case-number {
+
+            display: inline-block;
+
+            background: var(--pink-soft);
+
+            color: var(--rose);
+
+            padding: 4px 12px;
+
+            border-radius: 30px;
+
+            font-size: 0.8rem;
+
+            font-weight: 600;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        /* =====================================================
+           VIDEO
+        ===================================================== */
+
+        iframe {
+
+            width: 100%;
+
+            height: 220px;
+
+            border: none;
+
+            border-radius: 15px;
+
+            margin: 18px 0;
+
+            box-shadow:
+                0 6px 20px rgba(201, 111, 142, 0.10);
+
+        }
+
+
+        /* =====================================================
+           BUTTON
+        ===================================================== */
+
+        .btn {
+
+            display: inline-block;
+
+            padding: 12px 25px;
+
+            margin-top: 15px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--pink-main),
+                    var(--pink-dark)
+                );
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 50px;
+
+            font-weight: 600;
+
+            box-shadow:
+                0 6px 18px rgba(201, 111, 142, 0.20);
+
+            transition: 0.3s ease;
+
+        }
+
+
+        .btn:hover {
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 9px 22px rgba(201, 111, 142, 0.28);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--pink-dark),
+                    var(--rose)
+                );
+
+        }
+
+
+        /* =====================================================
+           SKILLS
+        ===================================================== */
+
+        .skills {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+        }
+
+
+        .skill {
+
+            display: inline-block;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--pink-light),
+                    var(--pink-soft)
+                );
+
+            color: var(--rose);
+
+            padding: 10px 18px;
+
+            border-radius: 50px;
+
+            border: 1px solid #f4d0dc;
+
+            font-size: 0.9rem;
+
+            font-weight: 600;
+
+            transition: 0.3s ease;
+
+        }
+
+
+        .skill:hover {
+
+            background: var(--pink-main);
+
+            color: white;
+
+            transform: translateY(-2px);
+
+        }
+
+
+        /* =====================================================
+           LISTS
+        ===================================================== */
+
+        ul {
+
+            padding-left: 22px;
+
+        }
+
+
+        li {
+
+            margin: 9px 0;
+
+            color: var(--text-light);
+
+        }
+
+
+        li::marker {
+
+            color: var(--pink-dark);
+
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--pink-main),
+                    var(--pink-dark)
+                );
+
+            text-align: center;
+
+            color: white;
+
+            padding: 38px 20px;
+
+            margin-top: 50px;
+
+            box-shadow:
+                0 -5px 25px rgba(201, 111, 142, 0.12);
+
+        }
+
+
+        footer p {
+
+            color: white;
+
+            margin: 5px 0;
+
+        }
+
+
+        /* =====================================================
+           TABLET
+        ===================================================== */
+
+        @media (max-width: 1000px) {
+
+            .member-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 768px) {
+
+            nav ul {
+
+                gap: 15px;
+
+                padding: 14px;
+
+            }
+
+
+            nav a {
+
+                font-size: 0.85rem;
+
+            }
+
+
+            .hero {
+
+                min-height: 80vh;
+
+                padding: 60px 20px;
+
+            }
+
+
+            .avatar {
+
+                width: 145px;
+
+                height: 145px;
+
+            }
+
+
+            .hero h1 {
+
+                font-size: 2rem;
+
+            }
+
+
+            .hero p {
+
+                font-size: 0.95rem;
+
+            }
+
+
+            .container {
+
+                width: 92%;
+
+                padding: 55px 0;
+
+            }
+
+
+            .section-title {
+
+                font-size: 1.65rem;
+
+            }
+
+
+            .group-card,
+            .project-card,
+            .card {
+
+                padding: 22px;
+
+            }
+
+
+            .grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .member-grid {
+
+                grid-template-columns:
+                    1fr 1fr;
+
+                gap: 18px;
+
+            }
+
+
+            .member-image {
+
+                height: 220px;
+
+            }
+
+
+            iframe {
+
+                height: 200px;
+
+            }
+
+        }
+
+
+        /* =====================================================
+           SMALL PHONE
+        ===================================================== */
+
+        @media (max-width: 480px) {
+
+            nav ul {
+
+                gap: 10px;
+
+            }
+
+
+            nav a {
+
+                font-size: 0.78rem;
+
+            }
+
+
+            .hero h1 {
+
+                font-size: 1.7rem;
+
+            }
+
+
+            .avatar {
+
+                width: 125px;
+
+                height: 125px;
+
+            }
+
+
+            .section-title {
+
+                font-size: 1.45rem;
+
+            }
+
+
+            .member-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .member-image {
+
+                height: 280px;
+
+            }
+
+
+            .skill {
+
+                font-size: 0.8rem;
+
+                padding: 8px 13px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ===================================================== -->
+
+    <nav>
+
+        <ul>
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#labs">Labs</a>
+            </li>
+
+            <li>
+                <a href="#projects">Project</a>
+            </li>
+
+            <li>
+                <a href="#reflection">Reflection</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#resources">Resources</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         HERO
+    ===================================================== -->
+
+    <header class="hero" id="home">
+
+        <div class="hero-content">
+
+
+            <!-- YOUR PERSONAL PHOTO -->
+
+            <div class="avatar">
+
+                <img
+                    src="ain.jpeg"
+                    alt="Ain Zahirah Binti Ainuddin"
+                >
+
+            </div>
+
+
+            <h1>
+                Ain Zahirah Binti Ainuddin
+            </h1>
+
+
+            <p>
+
+                A216718 • Bachelor of Computer Science
+
+                <br>
+
+                TTTN3133 Secure Programming
+
+                <br>
+
+                Universiti Kebangsaan Malaysia
+
+            </p>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         GROUP INFORMATION
+    ===================================================== -->
+
+    <section class="container">
+
+
+        <h2 class="section-title">
+            🌸 Group Information
+        </h2>
+
+
+        <div class="group-card">
+
+
+            <!-- STUDENT DETAILS -->
+
+            <h3>
+                Student Details
+            </h3>
+
+
+            <p>
+
+                <strong>Name:</strong>
+
+                Ain Zahirah Binti Ainuddin
+
+            </p>
+
+
+            <p>
+
+                <strong>Matric Number:</strong>
+
+                A216718
+
+            </p>
+
+
+            <p>
+
+                <strong>Programme:</strong>
+
+                Computer Science
+
+            </p>
+
+
+            <p>
+
+                <strong>Instructor:</strong>
+
+                Nur Hanis Sabrina Binti Suhaimi
+
+            </p>
+
+
+
+            <br>
+
+
+
+            <!-- =================================================
+                 GROUP MEMBERS
+            ================================================== -->
+
+            <h3>
+                Group Members
+            </h3>
+
+
+            <div class="member-grid">
+
+
+                <!-- =============================================
+                     MEMBER 1
+                ============================================== -->
+
+                <div class="member-card">
+
+
+                    <div class="member-image">
+
+                        <img
+                            src="ain.jpeg"
+                            alt="Ain Zahirah Binti Ainuddin"
+                        >
+
+                    </div>
+
+
+                    <div class="member-info">
+
+                        <h3>
+                            Ain Zahirah Binti Ainuddin
+                        </h3>
+
+
+                        <!-- CHANGE ROLE HERE -->
+
+                        <span class="member-role">
+                            Role: Team Member
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =============================================
+                     MEMBER 2
+                ============================================== -->
+
+                <div class="member-card">
+
+
+                    <div class="member-image">
+
+                        <img
+                            src="hadirah.jpeg"
+                            alt="Nur Hadirah Binti Khairi Affendi"
+                        >
+
+                    </div>
+
+
+                    <div class="member-info">
+
+                        <h3>
+                            Nur Hadirah Binti Khairi Affendi
+                        </h3>
+
+
+                        <!-- CHANGE ROLE HERE -->
+
+                        <span class="member-role">
+                            Role: Leader
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =============================================
+                     MEMBER 3
+                ============================================== -->
+
+                <div class="member-card">
+
+
+                    <div class="member-image">
+
+                        <img
+                            src="dyana.jpeg"
+                            alt="Dyana Binti Azizol"
+                        >
+
+                    </div>
+
+
+                    <div class="member-info">
+
+                        <h3>
+                            Dyana Binti Azizol
+                        </h3>
+
+
+                        <!-- CHANGE ROLE HERE -->
+
+                        <span class="member-role">
+                            Role: Team Member
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 PROJECT SCENARIO
+            ================================================== -->
+
+            <div class="scenario-box">
+
+
+                <h3>
+                    Project Scenario
+                </h3>
+
+
+                <p>
+
+                    This project focuses on identifying software
+                    vulnerabilities and implementing secure programming
+                    practices. The objective is to understand common
+                    cybersecurity risks and apply appropriate defence
+                    mechanisms to create more secure applications.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         VULNERABILITY SOLUTIONS
+    ===================================================== -->
+
+    <section class="container" id="labs">
+
+
+        <h2 class="section-title">
+            💻 Vulnerability Solutions
+        </h2>
+
+
+        <div class="grid">
+
+
+            <!-- CASE 1 -->
+
+            <div class="card">
+
+                <span class="case-number">
+                    CASE 01
+                </span>
+
+
+                <h3>
+                    Case 1: Login Test
+                </h3>
+
+
+                <p>
+                    Testing login authentication vulnerabilities and secure
+                    credential handling.
+                </p>
+
+
+                <iframe
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    title="Case 1 Video"
+                    allowfullscreen>
+                </iframe>
+
+
+                <p>
+
+                    Secure authentication and input validation are important
+                    for protecting user accounts. Strong password management
+                    helps reduce unauthorised access risks.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- CASE 2 -->
+
+            <div class="card">
+
+                <span class="case-number">
+                    CASE 02
+                </span>
+
+
+                <h3>
+                    Case 2: Data Validation
+                </h3>
+
+
+                <p>
+                    Preventing malicious data submission through validation
+                    mechanisms.
+                </p>
+
+
+                <iframe
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    title="Case 2 Video"
+                    allowfullscreen>
+                </iframe>
+
+
+                <p>
+
+                    Proper data checking reduces security vulnerabilities
+                    significantly.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- CASE 3 -->
+
+            <div class="card">
+
+                <span class="case-number">
+                    CASE 03
+                </span>
+
+
+                <h3>
+                    Case 3: Data Protection
+                </h3>
+
+
+                <p>
+                    Protecting sensitive information and securing storage
+                    mechanisms.
+                </p>
+
+
+                <iframe
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    title="Case 3 Video"
+                    allowfullscreen>
+                </iframe>
+
+
+                <p>
+
+                    Sensitive information protection improved understanding
+                    of secure storage techniques.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- CASE 4 -->
+
+            <div class="card">
+
+                <span class="case-number">
+                    CASE 04
+                </span>
+
+
+                <h3>
+                    Case 4: SQL Injection
+                </h3>
+
+
+                <p>
+                    Eliminating SQL injection vulnerabilities through secure
+                    queries.
+                </p>
+
+
+                <iframe
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    title="Case 4 Video"
+                    allowfullscreen>
+                </iframe>
+
+
+                <p>
+
+                    Parameterised queries effectively mitigate database
+                    exploitation risks.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- CASE 5 -->
+
+            <div class="card">
+
+                <span class="case-number">
+                    CASE 05
+                </span>
+
+
+                <h3>
+                    Case 5: Cross Site Scripting
+                </h3>
+
+
+                <p>
+                    Protecting applications from harmful script injections.
+                </p>
+
+
+                <iframe
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    title="Case 5 Video"
+                    allowfullscreen>
+                </iframe>
+
+
+                <p>
+
+                    Proper sanitising of user input helps prevent malicious
+                    scripts from running.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- CASE 6 -->
+
+            <div class="card">
+
+                <span class="case-number">
+                    CASE 06
+                </span>
+
+
+                <h3>
+                    Case 6: Session Security
+                </h3>
+
+
+                <p>
+                    Implementing secure session handling and access management.
+                </p>
+
+
+                <iframe
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    title="Case 6 Video"
+                    allowfullscreen>
+                </iframe>
+
+
+                <p>
+
+                    Secure session management improves overall application
+                    security.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PROJECT
+    ===================================================== -->
+
+    <section class="container" id="projects">
+
+
+        <h2 class="section-title">
+            🚀 Project
+        </h2>
+
+
+        <div class="project-card">
+
+
+            <h3>
+                Secure Programming Demonstration System
+            </h3>
+
+
+            <br>
+
+
+            <p>
+                <strong>Problem Statement:</strong>
+            </p>
+
+
+            <p>
+
+                Many modern applications are vulnerable to SQL Injection,
+                weak authentication, poor session management and other
+                attacks. This project demonstrates vulnerability
+                implementation and corresponding mitigation strategies.
+
+            </p>
+
+
+            <br>
+
+
+            <iframe
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                title="Project Demo"
+                allowfullscreen>
+            </iframe>
+
+
+            <p>
+
+                This project enables students to understand real-world
+                security threats and apply practical security measures.
+
+            </p>
+
+
+            <a
+                href="https://github.com/"
+                class="btn"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                View on GitHub
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         REFLECTION
+    ===================================================== -->
+
+    <section class="container" id="reflection">
+
+
+        <h2 class="section-title">
+            📖 Reflection
+        </h2>
+
+
+        <div class="group-card">
+
+
+            <p>
+
+                Throughout this Secure Programming project, I gained valuable
+                hands-on experience in identifying software vulnerabilities
+                and implementing security controls. I learned the importance
+                of secure coding, input validation, authentication mechanisms,
+                and database security. The project strengthened both my
+                technical knowledge and problem-solving abilities while
+                increasing my awareness of cybersecurity best practices.
+                Working with my team also enhanced communication and
+                collaboration skills.
+
+            </p>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SKILLS
+    ===================================================== -->
+
+    <section class="container" id="skills">
+
+
+        <h2 class="section-title">
+            🛠 Skills & Tech Stack
+        </h2>
+
+
+        <div class="group-card">
+
+
+            <div class="skills">
+
+
+                <span class="skill">
+                    SQL Injection
+                </span>
+
+
+                <span class="skill">
+                    Secure Coding
+                </span>
+
+
+                <span class="skill">
+                    HTML
+                </span>
+
+
+                <span class="skill">
+                    CSS
+                </span>
+
+
+                <span class="skill">
+                    Java
+                </span>
+
+
+                <span class="skill">
+                    Python
+                </span>
+
+
+                <span class="skill">
+                    Cybersecurity
+                </span>
+
+
+                <span class="skill">
+                    Authentication
+                </span>
+
+
+                <span class="skill">
+                    Input Validation
+                </span>
+
+
+                <span class="skill">
+                    GitHub
+                </span>
+
+
+                <span class="skill">
+                    Database Security
+                </span>
+
+
+                <span class="skill">
+                    Software Testing
+                </span>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         RESOURCES
+    ===================================================== -->
+
+    <section class="container" id="resources">
+
+
+        <h2 class="section-title">
+            📚 Resources
+        </h2>
+
+
+        <div class="group-card">
+
+
+            <ul>
+
+
+                <li>
+                    OWASP Top 10 Security Risks
+                </li>
+
+
+                <li>
+                    MDN Web Documentation
+                </li>
+
+
+                <li>
+                    GitHub Documentation
+                </li>
+
+
+                <li>
+                    Secure Programming Lecture Notes
+                </li>
+
+
+                <li>
+                    YouTube Technical Tutorials
+                </li>
+
+
+                <li>
+                    Visual Studio Code
+                </li>
+
+
+                <li>
+
+                    AI Assistance Acknowledgement:
+                    ChatGPT was used to assist with portfolio design
+                    and code improvement.
+
+                </li>
+
+
+            </ul>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer>
+
+
+        <p>
+            <strong>Ain Zahirah Binti Ainuddin</strong>
+        </p>
+
+
+        <p>
+            A216718
+        </p>
+
+
+        <p>
+            © 2026 Secure Programming e-Portfolio
+        </p>
+
+
+    </footer>
+
+
+</body>
+
+</html>
+
